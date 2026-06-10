@@ -1,0 +1,95 @@
+labels:
+  - stand
+  - walk
+  - run
+  - jump
+  - push_ups
+  - squat
+  - bend
+  - other
+
+data:
+  root: data/dev
+  raw_dir: data/dev/raw
+  annotations: data/dev/annotations.csv
+
+model:
+  architecture: r3d_18
+  checkpoint: models/final_checkpoint.pt
+  pretrained: true
+  use_temperature_scaling: true
+  clip_len: 16
+  frame_stride: 2
+  image_size: 112
+
+training:
+  seed: 42
+  epochs: 10
+  batch_size: 2
+  learning_rate: 0.0002
+  weight_decay: 0.0001
+  augment: true
+  label_smoothing: 0.05
+  strategy: last_block
+  balanced_sampler: true
+  stages:
+    - name: head_warmup
+      strategy: head
+      epochs: 2
+      learning_rate: 0.001
+      min_learning_rate: 0.0001
+      weight_decay: 0.0001
+      label_smoothing: 0.03
+    - name: last_block_finetune
+      strategy: last_block
+      epochs: 8
+      learning_rate: 0.0002
+      min_learning_rate: 0.00001
+      weight_decay: 0.0001
+      label_smoothing: 0.05
+
+inference:
+  infer_every_frames: 4
+  confidence_threshold: 0.55
+  smoothing_window: 5
+  min_event_duration_sec: 1.2
+  merge_gap_sec: 1.0
+  draw_overlay: true
+  fill_gaps_with_other: false
+  gap_label: other
+  min_gap_fill_sec: 0.5
+  boundary_refinement: true
+
+repetition_counting:
+  enabled: true
+  method: auto
+  pose_model_path: models/pose_landmarker_full.task
+  labels:
+    - jump
+    - push_ups
+    - squat
+    - bend
+  pose_labels:
+    - push_ups
+    - squat
+    - bend
+  sample_fps: 10
+  pose_sample_fps: 8
+  smooth_window: 5
+  pose_smooth_window: 5
+  default_min_period_sec: 0.5
+  prominence_std: 0.35
+  pose_prominence_std: 0.25
+  min_pose_detection_ratio: 0.45
+  min_period_sec:
+    jump: 0.35
+    push_ups: 0.55
+    squat: 0.6
+    bend: 0.55
+  peak_divisor:
+    push_ups: 2.0
+    squat: 2.0
+    bend: 2.0
+
+evaluation:
+  iou_threshold: 0.3

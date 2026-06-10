@@ -1,0 +1,106 @@
+{
+  "history": [
+    {
+      "epoch": 1,
+      "stage": "head_warmup",
+      "strategy": "head",
+      "train_loss": 1.62756,
+      "train_acc": 0.43354,
+      "val_loss": 1.24281,
+      "val_acc": 0.56075,
+      "lr": 0.00055
+    },
+    {
+      "epoch": 2,
+      "stage": "head_warmup",
+      "strategy": "head",
+      "train_loss": 1.20569,
+      "train_acc": 0.63599,
+      "val_loss": 0.86832,
+      "val_acc": 0.79439,
+      "lr": 0.0001
+    },
+    {
+      "epoch": 3,
+      "stage": "last_block_finetune",
+      "strategy": "last_block",
+      "train_loss": 1.49712,
+      "train_acc": 0.53374,
+      "val_loss": 0.97363,
+      "val_acc": 0.74766,
+      "lr": 0.00019277
+    },
+    {
+      "epoch": 4,
+      "stage": "last_block_finetune",
+      "strategy": "last_block",
+      "train_loss": 1.13755,
+      "train_acc": 0.70961,
+      "val_loss": 0.63515,
+      "val_acc": 0.88785,
+      "lr": 0.00017218
+    },
+    {
+      "epoch": 5,
+      "stage": "last_block_finetune",
+      "strategy": "last_block",
+      "train_loss": 0.84603,
+      "train_acc": 0.818,
+      "val_loss": 0.51404,
+      "val_acc": 0.92523,
+      "lr": 0.00014135
+    },
+    {
+      "epoch": 6,
+      "stage": "last_block_finetune",
+      "strategy": "last_block",
+      "train_loss": 0.73984,
+      "train_acc": 0.84663,
+      "val_loss": 0.45108,
+      "val_acc": 0.94393,
+      "lr": 0.000105
+    },
+    {
+      "epoch": 7,
+      "stage": "last_block_finetune",
+      "strategy": "last_block",
+      "train_loss": 0.66268,
+      "train_acc": 0.86503,
+      "val_loss": 0.4527,
+      "val_acc": 0.96262,
+      "lr": 6.865e-05
+    },
+    {
+      "epoch": 8,
+      "stage": "last_block_finetune",
+      "strategy": "last_block",
+      "train_loss": 0.57847,
+      "train_acc": 0.90184,
+      "val_loss": 0.38189,
+      "val_acc": 0.98131,
+      "lr": 3.782e-05
+    },
+    {
+      "epoch": 9,
+      "stage": "last_block_finetune",
+      "strategy": "last_block",
+      "train_loss": 0.59467,
+      "train_acc": 0.88344,
+      "val_loss": 0.35387,
+      "val_acc": 0.98131,
+      "lr": 1.723e-05
+    },
+    {
+      "epoch": 10,
+      "stage": "last_block_finetune",
+      "strategy": "last_block",
+      "train_loss": 0.58924,
+      "train_acc": 0.89571,
+      "val_loss": 0.34153,
+      "val_acc": 0.98131,
+      "lr": 1e-05
+    }
+  ],
+  "best_val_acc": 0.9813084112149533,
+  "best_val_loss": 0.3415339447070505
+}
