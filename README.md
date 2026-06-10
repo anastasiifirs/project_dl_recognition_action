@@ -188,8 +188,6 @@ walk:    F1 0.7692
 bend:    F1 0.6923
 ```
 
-Самые слабые места сейчас: `bend`, `walk`, `stand`, а также два отдельных test-видео (`10.MOV`, `7.MOV`), где модель заметно хуже переносится. Это честно отражено в `outputs/final/test_eval/summary_metrics.json`.
-
 Per-class IoU:
 
 ```text
