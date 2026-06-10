@@ -293,16 +293,6 @@ per_video_metrics.csv
 confusion_matrix.png
 ```
 
-## Референсы
-
-Были изучены:
-
-1. `IIharlamovv/action-recognition-v1.0`
-2. `felixchenfy/Realtime-Action-Recognition`
-
-Из первого проекта переосмыслены идеи видеофрагментов, 3D-CNN, sliding window inference, CSV-разметки событий и JSON-экспорта.
-
-Из второго проекта взяты только инженерные идеи temporal window, smoothing, confidence threshold и стабильной метки во времени. Устаревшие TensorFlow 1.x, OpenPose/tf-pose-estimation, PCA, ручные skeleton features и MLP не используются.
 
 ## Ограничения
 
